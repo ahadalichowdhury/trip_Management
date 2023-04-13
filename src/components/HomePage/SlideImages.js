@@ -1,41 +1,26 @@
-import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
 
-
-
-const divStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundSize: 'cover',
-  height: '500px'
-}
-const slideImages = [
-  {
-    url: 'https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-  },
-];
-
-const Slideshow = () => {
-    return (
-      <div className="slide-container">
-        <Slide>
-         {slideImages.map((slideImage, index)=> (
-            <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-              </div>
-            </div>
-          ))} 
-        </Slide>
+export default function SimpleSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+  return (
+    <Slider {...settings}>
+      <div>
+        <img src="https://img.freepik.com/free-psd/wood-text-style-effect_35913-2116.jpg?w=900&t=st=1681398541~exp=1681399141~hmac=d06b0f381702af98a0cd3ee708a8f66c78e314ebbc75160aa2f7d2b9c5cfafb0"height={"600px"} width={"100%"} alt="" />
       </div>
-    )
+      <div>
+        <img src="https://img.freepik.com/free-psd/wood-text-style-effect_35913-2116.jpg?w=900&t=st=1681398541~exp=1681399141~hmac=d06b0f381702af98a0cd3ee708a8f66c78e314ebbc75160aa2f7d2b9c5cfafb0" height={"600px"} width={"100%"} alt="" />
+      </div>
+      <div>
+        <img src="https://img.freepik.com/free-psd/wood-text-style-effect_35913-2116.jpg?w=900&t=st=1681398541~exp=1681399141~hmac=d06b0f381702af98a0cd3ee708a8f66c78e314ebbc75160aa2f7d2b9c5cfafb0" height={"600px"} width={"100%"} alt="" />
+      </div>
+    </Slider>
+  );
 }
-
-export default Slideshow;

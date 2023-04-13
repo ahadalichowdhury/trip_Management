@@ -1,0 +1,4 @@
+.bg:hover {
+  background-image: linear-gradient(to right, #b3d0f0, #694545);
+  border: none;
+}
